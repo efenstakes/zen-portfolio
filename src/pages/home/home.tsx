@@ -2,6 +2,7 @@ import { Environment, OrbitControls, Plane, Stage, Stars } from '@react-three/dr
 import { Canvas } from '@react-three/fiber'
 import React, { useRef, ReactNode, RefObject } from 'react'
 import { HemisphereLight, PointLight, Vector3 } from 'three'
+import AppbarComponent from '../../components/appbar/appbar.component'
 import DevAltExperience from '../../components/dev_experience/dev_alt_experience'
 import ScifyExperienceComponent from '../../components/scify_experience/scify_experience'
 import X2Drone from '../../components/scify_experience/X2Drone'
@@ -38,6 +39,8 @@ const HomePage = () => {
 
     return (
         <div>
+            {/* app bar */}
+            <AppbarComponent />
             
             <Experience scrollToWelcome={scrollToWelcome} />
 
