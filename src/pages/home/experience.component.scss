@@ -1,0 +1,72 @@
+@import '../../styles/commons';
+
+
+
+
+.main_experience {
+    position: relative;
+
+    height: 80vh;
+    width: 80%;
+    background-color: pink;
+}
+
+.main_experience__canvas {
+    @include absolute(0, 0, 0, 0);
+
+}
+
+.main_experience__side {
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    
+    width: 80vw;
+    height: 20%;
+
+    padding: 2rem 1rem;
+
+    background-color: rgba(pink, .5);
+    backdrop-filter: blur(4px);
+
+    color: $BLACK_ALT_COLOR;
+    font-weight: 500;
+
+    border-radius: 10px;
+
+    z-index: 20;
+}
+
+.main_experience__side_text {
+    text-align: center;
+    max-width: 560px;
+}
+.main_experience__side_icon {
+    // animation: bounce_kf 2s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s infinite normal both;
+    // animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    // animation-direction: normal;
+    // animation-fill-mode: both;
+}
+
+.main_experience__side_go_down {
+    position: absolute;
+    bottom: -50px;
+    
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background-color: $BLACK_COLOR;
+    color: $WHITE_COLOR;
+    border: 5px solid white;
+    // background-color: cornsilk;
+
+    cursor: pointer;
+
+    
+    animation: bounce_kf 1.6s linear 0s infinite normal both;
+}
