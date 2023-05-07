@@ -10,6 +10,7 @@
         transparent
     );
     backdrop-filter: blur(2px);
+    z-index: 200;
 }
 
 .appbar_action {
@@ -22,6 +23,6 @@
 }
 
 .appbar__title {
-    color: $PRIMARY_COLOR;
+    color: #0ed1e8;
     font-family: 'Oswald';
 }
