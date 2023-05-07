@@ -37,33 +37,39 @@
 
     border-radius: 10px;
 
-    z-index: 20;
+    z-index: 10;
 }
 
 .main_experience__side_text {
     text-align: center;
     max-width: 560px;
 }
-.main_experience__side_icon {
-    // animation: bounce_kf 2s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s infinite normal both;
-    // animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    // animation-direction: normal;
-    // animation-fill-mode: both;
-}
 
-.main_experience__side_go_down {
+
+.main_experience__side_go_down__container {
     position: absolute;
     bottom: -50px;
     
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    @media screen and (min-width: 768px) {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+.main_experience__side_go_down {    
+    width: 100%;
+    height: 100%;
 
     border-radius: 50%;
 
     background-color: $BLACK_COLOR;
     color: $WHITE_COLOR;
     border: 5px solid white;
-    // background-color: cornsilk;
 
     cursor: pointer;
 

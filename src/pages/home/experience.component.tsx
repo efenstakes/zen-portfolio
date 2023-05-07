@@ -18,13 +18,15 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
     return (
         <div className='main_experience' style={{ height: '100vh', width: '100%', backgroundColor: 'pink' }}>
 
-            <div className='main_experience__side'>
-                <p className='main_experience__side_text '>
+            <div className='main_experience__side fd_12'>
+                <p className='main_experience__side_text su_16'>
                     Welcome, click the button below to start previewing my resume
                 </p>
 
-                <div className="main_experience__side_go_down row ma_center ca_center" onClick={()=> scrollToWelcome()}>
-                    <KeyboardArrowDownIcon className='main_experience__side_icon' sx={{ fontSize: '2rem', }} />
+                <div className='main_experience__side_go_down__container su_23'>
+                    <div className="main_experience__side_go_down row ma_center ca_center" onClick={()=> scrollToWelcome()}>
+                        <KeyboardArrowDownIcon className='main_experience__side_icon' sx={{ fontSize: '2rem', }} />
+                    </div>
                 </div>
             </div>
 
