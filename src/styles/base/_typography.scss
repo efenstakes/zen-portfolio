@@ -219,9 +219,26 @@
     // width: 50%;
     display: inline-block;
 
-    background: -webkit-linear-gradient(120deg, $PRIMARY_COLOR, $BLACK_COLOR);
+    background: -webkit-linear-gradient(120deg, $PRIMARY_COLOR, $SECONDARY_COLOR);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
+    transform: translateY(-1rem);
+    
+    @media screen and (max-width: 600px) {
+        font-size: clamp(2.8em, 4vw, 4.4vw);
+        transform: translateY(-.6rem);
+    }
+}
+
+.section_title__white {
+    font-family: Oswald;
+    font-size: clamp(3rem, 4.4vw, 5.6vw);
+    
+    // width: 50%;
+    display: inline-block;
+
+    color: $WHITE_COLOR;
     
     transform: translateY(-1rem);
     
