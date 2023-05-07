@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber";
 
 
 
-const SCALE = 2.5
+const SCALE = 15
 export default function X2Drone(props) {
     const group = useRef(null);
   
@@ -20,15 +20,15 @@ export default function X2Drone(props) {
     }, [])
   
     useFrame(()=> {
-      setPosZ((state)=> {
-        return state < 0 ? state += .01 : state
-      })
+      // setPosZ((state)=> {
+      //   return state < 0 ? state += .01 : state
+      // })
     })
 
     
 
   return (
-    <group ref={group} {...props} dispose={null} rotation-y={ -Math.PI / 2 } scale={[ SCALE, SCALE, SCALE ]}>
+    <group ref={group} {...props} dispose={null} rotation-y={ -Math.PI / 2 } scale={[ SCALE, SCALE, SCALE ]} position-z={-44} position-y={5}>
       <group name="Scene">
         <group
           name="Sketchfab_model"

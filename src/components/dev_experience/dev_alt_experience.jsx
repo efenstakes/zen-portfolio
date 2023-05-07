@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { HemisphereLight, PointLight, Vector3 } from 'three'
 
+
+
+const SCALE = 2.5
 export default function DevAltExperience(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/Astronaut.glb");
@@ -11,14 +13,12 @@ export default function DevAltExperience(props) {
 
   useFrame(()=> {
     actions["CharacterArmature|Walk"].play()
-    // group.current.position = new Vector3(0, -1, -8)
-    // group.current.position.x = 0
-    group.current.position.y = -1
+    group.current.position.y = -2
     group.current.position.z = 0
   })
 
   return (
-    <group ref={group} {...props} dispose={null} castShadow scale={[1.5, 1.5, 1.5]} position-y={-1}>
+    <group ref={group} {...props} dispose={null} castShadow scale={[SCALE, SCALE, SCALE]} position-y={-2}>
       <group name="Root_Scene">
         <group name="RootNode">
           <group
