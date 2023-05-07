@@ -1,0 +1,135 @@
+@import '../../styles/commons';
+
+
+
+.welcome__underlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: pink;
+
+    z-index: -1;
+
+}
+.welcome {
+    // background-color: pink;
+    color: white;
+
+    position: relative;
+}
+
+.welcome__underlay_old {
+    @include absolute(0, 0, 0, 0);
+
+    z-index: -1;
+
+    // background-color: aqua;
+    // background-image: linear-gradient( 
+    //     to bottom, 
+    //     transparent,
+    //     lighten($BLACK_COLOR, 70),
+    //     // lightgrey,
+    //     transparent
+    // );
+    background-image: linear-gradient( 
+        to bottom, 
+        transparent,
+        rgba(13, 40, 64, .3),
+        rgba(13, 40, 64, .5),
+        rgba(13, 40, 64, .7),
+        rgba(13, 40, 64, .8),
+        rgba(13, 40, 64, .7),
+        rgba(13, 40, 64, .5),
+        rgba(13, 40, 64, .3),
+        transparent
+    );
+}
+
+.welcome__text {
+    font-family: 'Oswald';
+}
+
+.welcome__text_1 {
+    // color: darken($PRIMARY_COLOR, 20);
+    // color: darken($PRIMARY_COLOR, 30); // $PRIMARY_COLOR;
+}
+.welcome__text_2 {
+    // color: darken($PRIMARY_COLOR, 30); // $PRIMARY_COLOR;
+    // color: darken($PRIMARY_COLOR, 20);
+}
+
+.welcome__my_name {
+    font-family: 'Roboto';
+    font-style: italic;
+}
+
+
+.welcome_image__container {
+    position: relative;
+}
+
+
+.welcome_image__container__image {
+    height: 50vw;
+    max-height: 280px;
+    width: 50vw;
+    max-width: 280px;
+    border-radius: 50%;
+
+    transition: 200ms;
+    z-index: 200;
+    
+    box-shadow: 0px 2px 6px 6px #e6e6e6;
+
+    
+
+    &:hover {
+        transform: scale(1.1);
+        z-index: 200;
+
+        box-shadow: 0px 8px 18px 12px rgba(pink, .2);
+    }
+
+}
+
+.welcome_image__container__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+
+    font-size: 10rem;
+    font-weight: 900;
+    // color: lightgrey;
+    color: rgba($WHITE_COLOR, .9);
+
+    text-shadow: 0px 0px 12px grey;
+    
+    z-index: 1;
+}
+
+.welcome__side_icon {
+    // animation: bounce_kf 2s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s infinite normal both;
+    // animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    // animation-direction: normal;
+    // animation-fill-mode: both;
+    
+    animation: bounce_kf 1.6s linear 0s infinite normal both;
+}
+
+.welcome__side_go_down {
+    margin-top: 4rem;
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background-color: $WHITE_COLOR;
+    color: $BLACK_COLOR;
+
+    cursor: pointer;
+}
