@@ -52,15 +52,6 @@
     font-family: 'Oswald';
 }
 
-.welcome__text_1 {
-    // color: darken($PRIMARY_COLOR, 20);
-    // color: darken($PRIMARY_COLOR, 30); // $PRIMARY_COLOR;
-}
-.welcome__text_2 {
-    // color: darken($PRIMARY_COLOR, 30); // $PRIMARY_COLOR;
-    // color: darken($PRIMARY_COLOR, 20);
-}
-
 .welcome__my_name {
     font-family: 'Roboto';
     font-style: italic;
@@ -113,18 +104,13 @@
 }
 
 .welcome__side_icon {
-    // animation: bounce_kf 2s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s infinite normal both;
-    // animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    // animation-direction: normal;
-    // animation-fill-mode: both;
-    
     animation: bounce_kf 1.6s linear 0s infinite normal both;
 }
 
 .welcome__side_go_down {
     margin-top: 4rem;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 
     border-radius: 50%;
 
@@ -132,4 +118,10 @@
     color: $BLACK_COLOR;
 
     cursor: pointer;
+    
+
+    @media screen and (min-width: 768px) {
+        width: 80px;
+        height: 80px;
+    }
 }
