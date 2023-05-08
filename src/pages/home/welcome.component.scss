@@ -13,8 +13,11 @@
 
     z-index: -1;
 
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
 }
 .welcome {
+    margin-top: -1rem;
     // background-color: pink;
     color: white;
 
@@ -93,7 +96,7 @@
     
     transform: translate(-50%, -50%);
 
-    font-size: 10rem;
+    font-size: 6.4rem;
     font-weight: 900;
     // color: lightgrey;
     color: rgba($WHITE_COLOR, .9);
@@ -101,6 +104,11 @@
     text-shadow: 0px 0px 12px grey;
     
     z-index: 1;
+
+    
+    @media screen  and (min-width: 768px) {
+        font-size: 10rem;
+    }
 }
 
 .welcome__side_icon {
