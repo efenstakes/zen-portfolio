@@ -48,16 +48,17 @@
 
 .main_experience__side_go_down__container {
     position: absolute;
-    bottom: -50px;
+    bottom: -30px;
     
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 
     border-radius: 50%;
 
     @media screen and (min-width: 768px) {
-        width: 100px;
-        height: 100px;
+        bottom: -50px;
+        width: 88px;
+        height: 88px;
     }
 
 }
@@ -67,12 +68,12 @@
 
     border-radius: 50%;
 
-    background-color: $BLACK_COLOR;
-    color: $WHITE_COLOR;
-    border: 5px solid white;
+    background-color: rgba(whitesmoke, .9);
+    color: $BLACK_COLOR;
+    border: 5px solid rgba($color: #1e1e1e, $alpha: .9); // rgba(white, .1);
 
     cursor: pointer;
 
     
-    animation: bounce_kf 1.6s linear 0s infinite normal both;
+    animation: bounce_kf 1.6s cubic-bezier(0.23, 1, 0.320, 1) 1s infinite normal forwards;
 }

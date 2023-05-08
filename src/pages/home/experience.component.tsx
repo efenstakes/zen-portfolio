@@ -49,39 +49,57 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
                     <Stars radius={150} depth={50} fade speed={1} count={5000} factor={4} saturation={0} />
                 </Environment>
                 {/* <color attach="background" args={[ "lightgray" ]} /> */}
-                <pointLight color={'black'} position={[ 0, 4, 4 ]} intensity={.6} castShadow />
+
+                {/* peru */}
+                {/* <pointLight color={'black'} position={[ 0, 4, 4 ]} intensity={.6} castShadow />
                 <pointLight color={'blue'} position={[ 4, 4, 4 ]} intensity={1} castShadow />
                 <spotLight castShadow color='black' position={[ -2, 8, 3 ]} />
                 
                 <pointLight color={'pink'} position={[ 4, 4, 4 ]} intensity={1} castShadow />
-                <spotLight castShadow color='brown' position={[ -2, 8, 3 ]} />
+                <spotLight castShadow color='brown' position={[ -2, 8, 3 ]} /> */}
+
+                <pointLight color={'black'} position={[ 0, 4, 4 ]} intensity={.6} castShadow />
+                <pointLight color={'brown'} position={[ 4, 4, 4 ]} intensity={.6} castShadow />
+                <pointLight color={'darkgreen'} position={[ -4, 4, 4 ]} intensity={.6} castShadow />
+                <spotLight castShadow color='black' position={[ -2, 8, 3 ]} />
+                <spotLight castShadow color='black' position={[ 2, 8, 3 ]} />
+                
+                <pointLight color={'black'} position={[ 4, 4, 4 ]} intensity={1} castShadow />
+                {/* <spotLight castShadow color='brown' position={[ -2, 8, 3 ]} /> */}
 
                 <DevAltExperience />
 
-                <group position={[ -25, -2, -30 ]}>
-                    <Text3D
-                        font="/fonts/Rubik Light_Regular.json"
-                        args={[  ]}
-                        bevelEnabled
-                        size={2}
-                        bevelThickness={.2}
-                    >
-                        007.
-                    <meshBasicMaterial color="#0E7F00" />
-                    </Text3D>
-                </group>
-                <group position={[ 20, -2, -30 ]}>
-                    <Text3D
-                        font="/fonts/Rubik Light_Regular.json"
-                        args={[  ]}
-                        bevelEnabled
-                        size={2}
-                        bevelThickness={.2}
-                    >
-                    Is Here.
-                    <meshBasicMaterial color="#0E7F00" />
-                    </Text3D>
-                </group>
+                <Float floatIntensity={.1} floatingRange={[ .5, 1 ]} rotationIntensity={.1}>
+                    <group>
+                        {/* [ -25, -2, -30 ] */}
+                        <group position={[ -20, 2, -15 ]} rotation-y={Math.PI / 5}>
+                            <Text3D
+                                font="/fonts/Rubik Light_Regular.json"
+                                args={[  ]}
+                                bevelEnabled
+                                size={1.5}
+                                bevelThickness={.1}
+                            >
+                                007.
+                            <meshBasicMaterial color="#368ABF" />
+                            </Text3D>
+                        </group>
+                        {/* [ 20, -2, -30 ] */}
+                        <group position={[ 15, 2, -20 ]} rotation-y={-Math.PI / 5}>
+                            <Text3D
+                                font="/fonts/Rubik Light_Regular.json"
+                                args={[  ]}
+                                bevelEnabled
+                                size={1.5}
+                                bevelThickness={.1}
+                            >
+                                Is Here.
+                                {/* "#0E7F00" #3D9DD9 */}
+                            <meshBasicMaterial color="#368ABF"  />
+                            </Text3D>
+                        </group>
+                    </group>
+                </Float>
 
                 {/* <fog args={[ 'black', 0, 200 ]} /> */}
                 {/* <fog attach="fog" args={['gray', 10, 40]} /> */}
@@ -110,8 +128,8 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
                         opacity={.1}
                         wireframe
                         factor={.05}
-                        color="gray"
-                        emissive='tomato'
+                        color="black"
+                        emissive='pink'
                     />
                 </Sphere>
                 <Float speed={.5} floatIntensity={.5} rotationIntensity={.5} floatingRange={[ 1, 2 ]}>
@@ -140,6 +158,10 @@ function Floor() {
       '/assets/displacement-3.jpg',
     ])
     
+    // good colors
+    // #333233
+    // peru
+    // orange
     return (
         <group>
             <Plane
