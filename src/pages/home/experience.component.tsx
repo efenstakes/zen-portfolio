@@ -1,7 +1,7 @@
 import React from 'react'
 import { AccumulativeShadows, Cloud, ContactShadows, Environment, Float, MeshWobbleMaterial, OrbitControls, PerspectiveCamera, Plane, RandomizedLight, SoftShadows, Sphere, SpotLight, SpotLightShadow, Stage, Stars, Text3D } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
-import { HemisphereLight, PointLight, Vector3 } from 'three'
+import { Canvas, useLoader } from '@react-three/fiber'
+import { HemisphereLight, PointLight, TextureLoader, Vector3 } from 'three'
 import DevAltExperience from '../../components/dev_experience/dev_alt_experience'
 import ScifyExperienceComponent from '../../components/scify_experience/scify_experience'
 import X2Drone from '../../components/scify_experience/X2Drone'
@@ -35,7 +35,7 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
                 className='main_experience__canvas'
                 style={{ height: '100%', maxHeight: '960px', borderRadius: '8px' }}
             >
-                <OrbitControls enabled={false} />
+                <OrbitControls enabled={true} />
                 <hemisphereLight  />
                 {/* <Stage /> */}
                 <Environment
@@ -49,10 +49,13 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
                     <Stars radius={150} depth={50} fade speed={1} count={5000} factor={4} saturation={0} />
                 </Environment>
                 {/* <color attach="background" args={[ "lightgray" ]} /> */}
-                <pointLight color={'black'} position={[ 0, 4, 4 ]} intensity={10} castShadow />
-                <pointLight color={'blue'} position={[ 4, 4, 4 ]} intensity={10} castShadow />
-                <spotLight castShadow color='red' position={[ -2, 8, 3 ]} />
+                <pointLight color={'black'} position={[ 0, 4, 4 ]} intensity={.6} castShadow />
+                <pointLight color={'blue'} position={[ 4, 4, 4 ]} intensity={1} castShadow />
+                <spotLight castShadow color='black' position={[ -2, 8, 3 ]} />
                 
+                <pointLight color={'pink'} position={[ 4, 4, 4 ]} intensity={1} castShadow />
+                <spotLight castShadow color='brown' position={[ -2, 8, 3 ]} />
+
                 <DevAltExperience />
 
                 <group position={[ -25, -2, -30 ]}>
@@ -100,14 +103,23 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
                     <RandomizedLight castShadow amount={8} frames={100} position={[5, 5, -10]} />
                 </AccumulativeShadows>
 
+                
                 <Sphere args={[ 20, 40, 40 ]} position={[ 0, -1, -40 ]}>
                     <meshPhongMaterial color="gray" emissive='tomato' wireframe />
+                    <MeshWobbleMaterial
+                        opacity={.1}
+                        wireframe
+                        factor={.05}
+                        color="gray"
+                        emissive='tomato'
+                    />
                 </Sphere>
                 <Float speed={.5} floatIntensity={.5} rotationIntensity={.5} floatingRange={[ 1, 2 ]}>
                     <X2Drone />
                 </Float>
 
-                <Plane
+                <Floor />
+                {/* <Plane
                     receiveShadow
                     castShadow
                     args={[ 200, 200 ]}
@@ -115,10 +127,38 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
                     position-y={-3}
                 >
                     <meshStandardMaterial color={'pink'} attach='material' />
-                </Plane>
+                </Plane> */}
             </Canvas>
         </div>
     )
 }
+
+
+function Floor() {
+    const [normals, height] = useLoader(TextureLoader, [
+      '/assets/normap-map.png',
+      '/assets/displacement-3.jpg',
+    ])
+    
+    return (
+        <group>
+            <Plane
+                rotation={[-Math.PI / 2, 0, 0]}
+                position={[0, -4, 0]}
+                args={[200, 200, 1024, 1024]}
+            >
+                <meshStandardMaterial
+                    attach="material"
+                    color="#333233"
+                    metalness={0.1}
+                    normalMap={normals}
+                    displacementMap={height}
+                    displacementScale={1.2}
+                />
+            </Plane>
+        </group>
+    )
+  }
+
 
 export default Experience
