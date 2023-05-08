@@ -6,7 +6,11 @@
 
 
 .section {
-    min-height: 98vh;
+    min-height: 90vh;
+
+    @media screen and (min-width: 768px) {
+        min-height: 100vh;
+    }
 }
 
 
