@@ -35,7 +35,7 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
                 className='main_experience__canvas'
                 style={{ height: '100%', maxHeight: '960px', borderRadius: '8px' }}
             >
-                <OrbitControls enabled={true} />
+                <OrbitControls enabled={false} />
                 <hemisphereLight  />
                 {/* <Stage /> */}
                 <Environment
