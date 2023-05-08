@@ -171,18 +171,36 @@ $standard_animation_duration: 360ms;
     0% {
         transform: translateY(0);
     }
-    10% {
-        transform: translateY(-8px);
-    }
-    20% {
-        transform: translateY(0);
-    }
-    30% {
+    25% {
         transform: translateY(-4px);
     }
-    40% {
+    75% {
+        transform: translateY(4px);
+    }
+    85% {
+        transform: translateY(2px);
+    }
+    100% {
         transform: translateY(0);
     }
+    // to {
+    //     transform: translateY(-12px);
+    // }
+    // 0% {
+    //     transform: translateY(0);
+    // }
+    // 10% {
+    //     transform: translateY(-12px);
+    // }
+    // 20% {
+    //     transform: translateY(0);
+    // }
+    // 30% {
+    //     transform: translateY(-6px);
+    // }
+    // 40% {
+    //     transform: translateY(0);
+    // }
     // 0% {
     //     transform: translateY(0);
     // }
