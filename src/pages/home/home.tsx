@@ -1,24 +1,20 @@
-import { Environment, OrbitControls, Plane, Stage, Stars } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
-import React, { useRef, ReactNode, RefObject } from 'react'
-import { HemisphereLight, PointLight, Vector3 } from 'three'
+import React, { useRef } from 'react';
+
 import AppbarComponent from '../../components/appbar/appbar.component'
-import DevAltExperience from '../../components/dev_experience/dev_alt_experience'
-import ScifyExperienceComponent from '../../components/scify_experience/scify_experience'
-import X2Drone from '../../components/scify_experience/X2Drone'
 import SectionTitleComponent from '../../components/section_title/section_title.component'
 import VSpacerComponent from '../../components/v_spacer/v_spacer.component'
 import CompaniesComponent from './companies.component'
 import ContactComponent from './contact.component'
 import Experience from './experience.component'
-
-
-
-
-import './home.scss'
 import ProjectsComponent from './projects.component'
 import SkillsComponent from './skills.component'
 import WelcomeComponent from './welcome.component'
+
+
+
+// styles
+import './home.scss'
+
 
 const HomePage = () => {
     let welcomeScrollToRef = useRef<HTMLDivElement>(null)
@@ -72,10 +68,6 @@ const HomePage = () => {
                 <ContactComponent />
             </div>
             
-            {/* <div className="dev_experience"> */}
-                {/* <ScifyExperienceComponent /> */}
-            {/* </div> */}
-
         </div>
     )
 }
