@@ -1,13 +1,15 @@
 import React from 'react'
-import { AccumulativeShadows, Cloud, ContactShadows, Environment, Float, MeshWobbleMaterial, OrbitControls, PerspectiveCamera, Plane, RandomizedLight, SoftShadows, Sphere, SpotLight, SpotLightShadow, Stage, Stars, Text3D } from '@react-three/drei'
+import { AccumulativeShadows, ContactShadows, Environment, Float, MeshWobbleMaterial, OrbitControls, Plane, RandomizedLight, SoftShadows, Sphere, SpotLight, Stars, Text3D } from '@react-three/drei'
 import { Canvas, useLoader } from '@react-three/fiber'
-import { HemisphereLight, PointLight, TextureLoader, Vector3 } from 'three'
+import { HemisphereLight, TextureLoader, } from 'three'
 import DevAltExperience from '../../components/dev_experience/dev_alt_experience'
-import ScifyExperienceComponent from '../../components/scify_experience/scify_experience'
 import X2Drone from '../../components/scify_experience/X2Drone'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
+
+
 import './experience.component.scss'
+import { useWindowWidth } from '@react-hook/window-size'
 
 
 
@@ -15,8 +17,10 @@ type ExperienceProps = {
     scrollToWelcome: () => void,
 }
 const Experience = ({ scrollToWelcome }: ExperienceProps) => {
+    const width = useWindowWidth()
+
     return (
-        <div className='main_experience' style={{ height: '100vh', width: '100%', backgroundColor: 'pink' }}>
+        <div className='main_experience'>
 
             <div className='main_experience__side fd_12'>
                 <p className='main_experience__side_text su_16'>
@@ -33,7 +37,7 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
             <Canvas
                 shadows
                 className='main_experience__canvas'
-                style={{ height: '100%', maxHeight: '960px', borderRadius: '8px' }}
+                style={{ height: '100%', maxHeight: '960px', borderRadius: '.5rem' }}
             >
                 <OrbitControls enabled={false} />
                 <hemisphereLight  />
@@ -72,12 +76,15 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
                 <Float floatIntensity={.1} floatingRange={[ .5, 1 ]} rotationIntensity={.1}>
                     <group>
                         {/* [ -25, -2, -30 ] */}
-                        <group position={[ -20, 2, -15 ]} rotation-y={Math.PI / 5}>
+                        <group
+                            position={width > 768 ? [ -20, 2, -15 ] : [ 3, 6, -15 ]}
+                            rotation-y={ width > 768 ? Math.PI / 5 : 0 }
+                        >
                             <Text3D
                                 font="/fonts/Rubik Light_Regular.json"
                                 args={[  ]}
                                 bevelEnabled
-                                size={1.5}
+                                size={ width > 768 ? 1.5 : 1}
                                 bevelThickness={.1}
                             >
                                 007.
@@ -85,15 +92,18 @@ const Experience = ({ scrollToWelcome }: ExperienceProps) => {
                             </Text3D>
                         </group>
                         {/* [ 20, -2, -30 ] */}
-                        <group position={[ 15, 2, -20 ]} rotation-y={-Math.PI / 5}>
+                        <group
+                            position={width > 768 ? [ 15, 2, -20 ] : [ 3, 6, -15 ] }
+                            rotation-y={ width > 768 ? -Math.PI / 5 : 0 }
+                        >
                             <Text3D
                                 font="/fonts/Rubik Light_Regular.json"
                                 args={[  ]}
                                 bevelEnabled
-                                size={1.5}
+                                size={width > 768 ? 1.5 : 1}
                                 bevelThickness={.1}
                             >
-                                Is Here.
+                                { width > 768 ? "Is Here." : "007." }
                                 {/* "#0E7F00" #3D9DD9 */}
                             <meshBasicMaterial color="#368ABF"  />
                             </Text3D>

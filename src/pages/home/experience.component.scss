@@ -6,9 +6,15 @@
 .main_experience {
     position: relative;
 
-    height: 80vh;
-    width: 80%;
-    background-color: pink;
+    height: 92vh;
+
+    // height: 80vh;
+    // width: 80%;
+    // background-color: pink;
+
+    @media screen  and (min-width: 768px) {
+        height: 100vh;
+    }
 }
 
 .main_experience__canvas {
