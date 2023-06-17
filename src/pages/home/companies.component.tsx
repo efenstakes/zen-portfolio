@@ -105,6 +105,18 @@ const CompaniesComponent = () => {
             
             {/* title */}
             <SectionTitleComponent title="COMPANIES" />
+            {
+                !selectedCompany &&
+                    <>
+                        <VSpacerComponent space={-.5} />
+                        <div className="row ca_center ma_center">
+                            <p className="italic text-center text_7">
+                                Click a company to see details below.
+                            </p>
+                        </div>
+                    </>
+            }
+            
             <VSpacerComponent space={2} />
 
             {/* comapny list */}
@@ -129,14 +141,6 @@ const CompaniesComponent = () => {
             </div>
 
             { !selectedCompany && <VSpacerComponent space={3} /> }
-            {
-                !selectedCompany &&
-                    <div className="row ca_center">
-                        <p className="italic text_7">
-                            Click a company to see details
-                        </p>
-                    </div>
-            }
 
             {/* if selected show it hete */}
             {
