@@ -1,6 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import React, { useRef, useEffect, } from "react";
+import { useGLTF, } from "@react-three/drei"
 
 
 
@@ -8,10 +7,8 @@ const SCALE = 15
 export default function X2Drone(props) {
     const group = useRef(null);
   
-    const { nodes, materials, animations } = useGLTF("/x2.glb");
-    const { actions } = useAnimations(animations, group);
-  
-    const [posZ, setPosZ] = useState(-5)
+    const { nodes, materials } = useGLTF("/x2.glb");
+    // const { actions } = useAnimations(animations, group);
   
     // console.log("actions ", actions)
   
@@ -19,11 +16,11 @@ export default function X2Drone(props) {
       // actions.Hover.play()
     }, [])
   
-    useFrame(()=> {
+    // useFrame(()=> {
       // setPosZ((state)=> {
       //   return state < 0 ? state += .01 : state
       // })
-    })
+    // })
 
     
 
