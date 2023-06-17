@@ -10,7 +10,9 @@
 
 
 .contact_section {
-    background-color: $SECONDARY_COLOR;
+    background-color: $BLACK_ALT_COLOR;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
     padding: 4rem 0;
 }
 .contact {
