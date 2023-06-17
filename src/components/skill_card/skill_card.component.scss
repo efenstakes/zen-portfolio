@@ -64,10 +64,17 @@ $DESKTOP_LG_SIZE: 1080px;
 
     transition: 300ms;
 
+    
+    width: 50vw;
+    aspect-ratio: 4/3;
+
     @media screen and (min-width: $DESKTOP_SIZE) {
         max-width: 1000px;
         width: 50vw;
-        height: 24vw;
+        // height: 24vw;
+        
+        width: 50vw;
+        aspect-ratio: 4/3;
     }
 }
 
@@ -75,7 +82,8 @@ $DESKTOP_LG_SIZE: 1080px;
     
     @media screen and (min-width: $DESKTOP_SIZE) {
         // max-height: 1000px;
-        width: 50vw;
+        // width: 50vw;
+        // aspect-ratio: 4/3;
     }
 }
 
