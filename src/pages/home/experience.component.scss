@@ -35,7 +35,13 @@
 
     padding: 2rem 1rem;
 
-    background-color: rgba(pink, .5);
+    background: linear-gradient(
+        130deg,
+        // #F28177,
+        // #F2AF5C,
+        rgba($PRIMARY_COLOR, .7),
+        rgba($SECONDARY_COLOR, .7),
+    );
     backdrop-filter: blur(4px);
 
     color: $BLACK_ALT_COLOR;
@@ -54,7 +60,7 @@
 
 .main_experience__side_go_down__container {
     position: absolute;
-    bottom: -30px;
+    bottom: -29px;
     
     width: 60px;
     height: 60px;
@@ -62,7 +68,7 @@
     border-radius: 50%;
 
     @media screen and (min-width: 768px) {
-        bottom: -50px;
+        bottom: -44px;
         width: 88px;
         height: 88px;
     }
@@ -74,7 +80,7 @@
 
     border-radius: 50%;
 
-    background-color: rgba(whitesmoke, .9);
+    background-color: rgba(whitesmoke, 1);
     color: $BLACK_COLOR;
     border: 5px solid rgba($color: #1e1e1e, $alpha: .9); // rgba(white, .1);
 
