@@ -13,8 +13,8 @@ export default function DevAltExperience(props) {
 
   useFrame(()=> {
     actions["CharacterArmature|Walk"].play()
-    group.current.position.y = -2
-    group.current.position.z = 0
+    // group.current.position.y = -2
+    // group.current.position.z = 0
   })
 
   return (
